@@ -112,5 +112,10 @@ class SymbolTableWithHash<Key, Value> {
 
     public int size() { return numberOfEntries; }
     public boolean isEmpty() { return numberOfEntries == 0; }
-    public int index(Key key){ return hash(key); }
+        public int index(Key key){
+        if(contains(key)){
+            return hash(key);
+        }
+        return -1;
+    }
 }
