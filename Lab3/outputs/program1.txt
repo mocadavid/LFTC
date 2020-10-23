@@ -1,0 +1,88 @@
+Program1
+
+Tokens line by line:
+
+[program , a1, ;]
+[num , length, ;]
+[read, (, length, ), ;]
+[num, [, length, ],  , vector, ;]
+[num , index, ;]
+[index , =,  , 0, ;]
+[num , data, ;]
+[while, (, index, <, length, )]
+[read, (, data, ), ;]
+[vector, [, index, ], =, data, ;]
+[index, =, index, +, 1, ;]
+[endwhile, ;]
+[endprogram, ;]
+
+Lexically correct!
+
+Program Internal Form: pair by pair separated with comma.
+
+[Pair{first='program', second=-1}
+, Pair{first='a1', second=0}
+, Pair{first=';', second=-1}
+, Pair{first='num', second=-1}
+, Pair{first='length', second=6}
+, Pair{first=';', second=-1}
+, Pair{first='read', second=-1}
+, Pair{first='(', second=-1}
+, Pair{first='length', second=6}
+, Pair{first=')', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='num', second=-1}
+, Pair{first='[', second=-1}
+, Pair{first='length', second=6}
+, Pair{first=']', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first=';', second=-1}
+, Pair{first='num', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=';', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='=', second=-1}
+, Pair{first='0', second=0}
+, Pair{first=';', second=-1}
+, Pair{first='num', second=-1}
+, Pair{first='data', second=2}
+, Pair{first=';', second=-1}
+, Pair{first='while', second=-1}
+, Pair{first='(', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='<', second=-1}
+, Pair{first='length', second=6}
+, Pair{first=')', second=-1}
+, Pair{first='read', second=-1}
+, Pair{first='(', second=-1}
+, Pair{first='data', second=2}
+, Pair{first=')', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first='data', second=2}
+, Pair{first=';', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='=', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='+', second=-1}
+, Pair{first='1', second=1}
+, Pair{first=';', second=-1}
+, Pair{first='endwhile', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='endprogram', second=-1}
+, Pair{first=';', second=-1}
+]
+
+Symbol Table:
+
+0: 0
+a1: 0
+1: 1
+data: 2
+length: 6
+index: 2
+vector: 3
