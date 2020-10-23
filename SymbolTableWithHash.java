@@ -57,7 +57,7 @@ class SymbolTableWithHash<Key, Value> {
         return (key.hashCode() & 0x7fffffff) % numberOfChains;
     }
 
-    public void put(Key key, Value value) {
+    public int put(Key key, Value value) {
         if (key == null){ throw new RuntimeException("Key is null in put!"); }
         if (value == null){ throw new RuntimeException("Value is null in put!"); }
 
@@ -67,13 +67,13 @@ class SymbolTableWithHash<Key, Value> {
 
         for (Node x = nodes[index]; x != null; x = x.next) {
             if (key.equals(x.key)) {
-                x.value = value;
-                return;
+                return index;
             }
         }
 
         numberOfEntries++;
         nodes[index] = new Node(key, value, nodes[index]);
+        return index;
     }
 
     public void remove(Key key) {
