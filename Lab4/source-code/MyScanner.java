@@ -28,6 +28,8 @@ public class MyScanner {
 
         boolean valid = true;
         boolean composed = false;
+        boolean negative = false;
+        boolean substraction = false;
         String lastToken = "";
         int lineNumber = 0;
         String lastSign = "";
@@ -45,36 +47,58 @@ public class MyScanner {
                 for(String token: tokens){
                     if (token.equals(" ") || token.equals(""))
                         continue;
-                    //System.out.println(token);
+
                     token = token.strip();
 
                     if(!composed){
                         if(reservedWords.containsKey(token)){
+                            negative = false;
+                            substraction = false;
                             lastSign ="";
                             PIF.add(new Pair(token,-1));
                         }
                         else if (separators.containsKey(token)){
+                            negative = false;
+                            substraction = false;
                             lastSign ="";
                             PIF.add(new Pair(token, -1));
                         }
                         else if (specialChars.containsKey(token)){
                             lastSign ="";
+                            substraction = false;
+                            negative = false;
                             PIF.add(new Pair(token, -1));
                         }
                         else if (Arrays.asList("+","-","*","/","%").contains(token)){
+                            if (token.equals("-") && !substraction){
+                                negative = true;
+                            }
                             lastSign = token;
                             PIF.add(new Pair(token, -1));
                         }
                         else if (Arrays.asList("<",">","=").contains(token)){
+                            substraction = false;
+                            negative = false;
                             lastSign ="";
                             composed = true;
                             lastToken = token;
                         }
                         else if (isIdentifier(token) || isConstant(token,lastSign)){
-                            symbolTable.put(token,"0");
-                            int index = symbolTable.index(token);
-                            PIF.add(new Pair(token,index));
-                            lastSign ="";
+                            if (negative){
+                                PIF.remove(PIF.size()-1);
+                                symbolTable.put("-"+token,"0");
+                                int index = symbolTable.index(token);
+                                PIF.add(new Pair("-"+token,index));
+                                negative = false;
+                                substraction = true;
+                            }
+                            else{
+                                symbolTable.put(token,"0");
+                                int index = symbolTable.index(token);
+                                PIF.add(new Pair(token,index));
+                                lastSign ="";
+                                substraction = true;
+                            }
                         }
                         else{
                             valid = false;
@@ -109,6 +133,9 @@ public class MyScanner {
                             composed = false;
                             lastToken = "";
                             PIF.add(new Pair(token, -1));
+                            if (!substraction){
+                                negative = true;
+                            }
                         }
                         else if (Arrays.asList("<",">","=").contains(token)){
                             lastSign ="";
@@ -130,6 +157,7 @@ public class MyScanner {
                             symbolTable.put(token,"0");
                             int index = symbolTable.index(token);
                             PIF.add(new Pair(token,index));
+                            substraction = true;
                         }
                         else{
                             valid = false;
