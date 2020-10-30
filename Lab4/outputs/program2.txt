@@ -1,0 +1,126 @@
+Program2
+
+Tokens line by line:
+
+[program , a2, ;]
+[num, [, 3, ],  , vector, ;]
+[vector, [, 0, ], =, 2, ;]
+[vector, [, 1, ], =, 1, ;]
+[vector, [, 2, ], =, 4, ;]
+[num , index, ;]
+[index , =,  , 1, ;]
+[num , max, ;]
+[max , =,  , vector, [, 0, ], ;]
+[while, (, index , <,  , 3, )]
+[if, (, max, <, vector, [, index, ], ), ;]
+[max, =, vector, [, index, ], ;]
+[endif, ;]
+[index , =,  , index , +,  , 1, ;]
+[endwhile, ;]
+[write, (, max, ), ;]
+[endprogram, ;]
+
+Lexically correct!
+
+Program Internal Form: pair by pair separated with comma.
+
+[Pair{first='program', second=-1}
+, Pair{first='a2', second=1}
+, Pair{first=';', second=-1}
+, Pair{first='num', second=-1}
+, Pair{first='[', second=-1}
+, Pair{first='3', second=3}
+, Pair{first=']', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first=';', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='0', second=0}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first='2', second=2}
+, Pair{first=';', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='1', second=1}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first='1', second=1}
+, Pair{first=';', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='2', second=2}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first='4', second=4}
+, Pair{first=';', second=-1}
+, Pair{first='num', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=';', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='=', second=-1}
+, Pair{first='1', second=1}
+, Pair{first=';', second=-1}
+, Pair{first='num', second=-1}
+, Pair{first='max', second=4}
+, Pair{first=';', second=-1}
+, Pair{first='max', second=4}
+, Pair{first='=', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='0', second=0}
+, Pair{first=']', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='while', second=-1}
+, Pair{first='(', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='<', second=-1}
+, Pair{first='3', second=3}
+, Pair{first=')', second=-1}
+, Pair{first='if', second=-1}
+, Pair{first='(', second=-1}
+, Pair{first='max', second=4}
+, Pair{first='<', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=']', second=-1}
+, Pair{first=')', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='max', second=4}
+, Pair{first='=', second=-1}
+, Pair{first='vector', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=']', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='endif', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='=', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='+', second=-1}
+, Pair{first='1', second=1}
+, Pair{first=';', second=-1}
+, Pair{first='endwhile', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='write', second=-1}
+, Pair{first='(', second=-1}
+, Pair{first='max', second=4}
+, Pair{first=')', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='endprogram', second=-1}
+, Pair{first=';', second=-1}
+]
+
+Symbol Table:
+
+0: 0
+1: 1
+a2: 1
+2: 2
+3: 3
+4: 4
+max: 4
+index: 2
+vector: 3

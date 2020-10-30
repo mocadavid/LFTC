@@ -1,0 +1,21 @@
+program a2;
+
+num[3] vector;
+vector[0]=2;
+vector[1]=1;
+vector[2]=4;
+
+num index;
+index = 1;
+num max;
+max = vector[0];
+
+while(index < 3)
+if(max<vector[index]);
+max=vector[index];
+endif;
+index = index + 1;
+endwhile;
+
+write(max);
+endprogram;

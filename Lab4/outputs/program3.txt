@@ -1,0 +1,116 @@
+Program3
+
+Tokens line by line:
+
+[program , a3, ;]
+[char, [, 3, ],  , password, ;]
+[password, [, 0, ],  , =,  , 'e', ;]
+[password, [, 1, ],  , =,  , 'c', ;]
+[password, [, 2, ],  , =,  , 'e', ;]
+[num , index, ;]
+[index , =,  , 0, ;]
+[while, (, index , <,  , 3, )]
+[if , (, password, [, index, ],  , is , 'e', )]
+[password, [, index, ], =, 'y', ;]
+[else, ;]
+[password, [, index, ], =, 'n', ;]
+[endelse, ;]
+[endif, ;]
+[endwhile, ;]
+[endprogram, ;]
+
+Lexically correct!
+
+Program Internal Form: pair by pair separated with comma.
+
+[Pair{first='program', second=-1}
+, Pair{first='a3', second=2}
+, Pair{first=';', second=-1}
+, Pair{first='char', second=-1}
+, Pair{first='[', second=-1}
+, Pair{first='3', second=3}
+, Pair{first=']', second=-1}
+, Pair{first='password', second=3}
+, Pair{first=';', second=-1}
+, Pair{first='password', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='0', second=0}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first=''e'', second=1}
+, Pair{first=';', second=-1}
+, Pair{first='password', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='1', second=1}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first=''c'', second=3}
+, Pair{first=';', second=-1}
+, Pair{first='password', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='2', second=2}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first=''e'', second=1}
+, Pair{first=';', second=-1}
+, Pair{first='num', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=';', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='=', second=-1}
+, Pair{first='0', second=0}
+, Pair{first=';', second=-1}
+, Pair{first='while', second=-1}
+, Pair{first='(', second=-1}
+, Pair{first='index', second=2}
+, Pair{first='<', second=-1}
+, Pair{first='3', second=3}
+, Pair{first=')', second=-1}
+, Pair{first='if', second=-1}
+, Pair{first='(', second=-1}
+, Pair{first='password', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=']', second=-1}
+, Pair{first='is', second=-1}
+, Pair{first=''e'', second=1}
+, Pair{first=')', second=-1}
+, Pair{first='password', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first=''y'', second=5}
+, Pair{first=';', second=-1}
+, Pair{first='else', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='password', second=3}
+, Pair{first='[', second=-1}
+, Pair{first='index', second=2}
+, Pair{first=']', second=-1}
+, Pair{first='=', second=-1}
+, Pair{first=''n'', second=0}
+, Pair{first=';', second=-1}
+, Pair{first='endelse', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='endif', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='endwhile', second=-1}
+, Pair{first=';', second=-1}
+, Pair{first='endprogram', second=-1}
+, Pair{first=';', second=-1}
+]
+
+Symbol Table:
+
+'n': 0
+0: 0
+1: 1
+2: 2
+a3: 2
+password: 3
+3: 3
+'y': 5
+'e': 1
+index: 2
+'c': 3

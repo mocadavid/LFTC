@@ -1,0 +1,13 @@
+Program Error
+
+Tokens line by line:
+
+[program , e, ;]
+[num, [, 3, ],  , vector, ;]
+[vector, [, 0, ], =, 2, ;]
+[vector, [, 1, ], =, 1, ;]
+[vector, [, 2, ], =, 4, ;]
+[char , letter, ;]
+[letter , =,  , 'a2', ;]
+
+Lexical error: line 8 at: 'a2'
