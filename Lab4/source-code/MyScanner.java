@@ -150,7 +150,7 @@ public class MyScanner {
             System.out.println("\nLexically correct!\n");
             System.out.println("Program Internal Form: pair by pair separated with comma.\n");
             System.out.println(PIF);
-            System.out.println("\nSymbol Table:\n");
+            System.out.println("\nSymbol Table: (HashTable with separate chaining)\n");
             symbolTable.keys().forEach(x->System.out.println(x+": "+symbolTable.index(x)));
 
         }else{
