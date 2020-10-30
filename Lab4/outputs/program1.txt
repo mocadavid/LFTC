@@ -77,7 +77,7 @@ Program Internal Form: pair by pair separated with comma.
 , Pair{first=';', second=-1}
 ]
 
-Symbol Table:
+Symbol Table: (HashTable with separate chaining)
 
 0: 0
 a1: 0
