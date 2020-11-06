@@ -5,15 +5,28 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+/**
+* Class which works as a finite automata.
+*/
 public class FA {
 
+    //This field is true if the given sequence is accepted by the FA.
     private boolean valid = false;
+    //The list of states.
     private List<String> states = new LinkedList<>();
+    //The list of alphabet.
     private List<String> alphabet = new LinkedList<>();
+    //The initial state.
     private String initialState;
+    //The list of final states.
     private List<String> finalStates = new LinkedList<>();
+    //The dictionary of transitions.
     private Map<Pair,String> transitions = new HashMap<>();
 
+    /**
+    *Loads the states, alphabet, initial state, final states, transitions from a file.
+    * @param filename: The name of the file: String
+    */
     private void loadFile(String filename){
         try{
             BufferedReader bufferedReader;
@@ -68,12 +81,19 @@ public class FA {
         } catch (IOException e) { e.printStackTrace(); }
         System.out.println("Reading done!");
     }
-
+    
+   /**
+    *Main function of the FA.
+    * @param filename:The file’s name on which the FA is built: String
+    */
     public void start(String filename){
         loadFile(filename);
         menu();
     }
-
+    
+   /**
+    *Carries UI logic on displaying the option that the user wants.
+    */
     private void menu(){
         boolean exit = false;
         Scanner scanner = new Scanner(System.in);
@@ -105,6 +125,9 @@ public class FA {
         }
     }
 
+    /**
+    *Displays the options available for the user.
+    */
     private void displayMenu(){
         System.out.println("Press 0 to exit.");
         System.out.println("Press 1 for the set of states.");
