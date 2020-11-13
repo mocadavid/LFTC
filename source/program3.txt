@@ -1,0 +1,20 @@
+program a3;
+
+char[3] password;
+password[0] = 'e';
+password[1] = 'c';
+password[2] = 'e';
+
+num index;
+index = 0;
+
+while(index < 3)
+if (password[index] is 'e')
+password[index]='y';
+else;
+password[index]='n';
+endelse;
+endif;
+endwhile;
+
+endprogram;
