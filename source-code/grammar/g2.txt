@@ -1,0 +1,25 @@
+programDef stmtlist stmt simplestmt structstmt declar assignstmt iostmt type1 type2 type expression accesvector asiglist aritoperators ifstmt whilestmt condition cond1 cond2 reloperators operators
+program IDENTIFIER ; endprogram bool char num string [ ] CONST = + - / * % read ( ) write if endif else endelse while endwhile < <= is <> => > and or not
+programDef
+programDef -> program IDENTIFIER ; stmtlist endprogram ;
+stmtlist -> stmt | stmt stmtlist
+stmt -> simplestmt | structstmt | declar
+simplestmt -> assignstmt | iostmt
+type1 -> bool | char | num | string
+type2 -> type1 [ CONST ]
+type -> type1 | type2
+declar -> type IDENTIFIER ;
+assignstmt -> IDENTIFIER = asiglist | IDENTIFIER = expression | IDENTIFIER = accesvector | accesvector = asiglist | accesvector = expression | accesvector = accesvector
+asiglist -> CONST | CONST asiglist ;
+accesvector -> IDENTIFIER [ CONST ] | IDENTIFIER [ IDENTIFIER ]
+operators -> + | - | / | * | %
+expression -> CONST operators IDENTIFIER | CONST operators CONST | IDENTIFIER operators IDENTIFIER | IDENTIFIER operators CONST | accesvector operators IDENTIFIER | accesvector operators CONST
+iostmt -> read ( IDENTIFIER ) ; | write ( IDENTIFIER ) ;
+structstmt -> ifstmt | whilestmt
+ifstmt -> if ( condition ) stmtlist else stmtlist endelse "endif" | "if" ( condition ) stmtlist endif
+whilestmt -> while ( condition ) stmtlist endwhile
+condition -> cond1 | cond2
+cond1 -> IDENTIFIER aritoperators IDENTIFIER | IDENTIFIER aritoperators CONST | IDENTIFIER aritoperators accesvector | CONST aritoperators IDENTIFIER | CONST aritoperators CONST | CONST aritoperators accesvector | accesvector aritoperators IDENTIFIER | accesvector aritoperators CONST | accesvector aritoperators accesvector
+cond2 -> IDENTIFIER reloperators IDENTIFIER | IDENTIFIER reloperators CONST | IDENTIFIER reloperators accesvector | CONST reloperators IDENTIFIER | CONST reloperators CONST | CONST reloperators accesvector | accesvector reloperators IDENTIFIER | accesvector reloperators CONST | accesvector reloperators accesvector
+aritoperators -> < | <= | is | <> | => | >
+reloperators -> and | or | not
