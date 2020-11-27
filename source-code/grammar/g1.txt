@@ -1,6 +1,11 @@
-S A B
-0 1
-S
-S -> 0 B | 1 A
-A -> 0 | 0 S | 1 A A
-B -> 1 | 1 S | 0 B B
+E E' T T' F
++ * ( ) id
+E
+E -> T E'
+E' -> + T E'
+E' -> ε
+T -> F T'
+T' -> * F T'
+T' -> ε
+F -> ( E )
+F -> id
