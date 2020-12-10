@@ -1,0 +1,33 @@
+programDef stmtlist stmtlist2 stmt simplestmt structstmt declar assignstmt assignstmt1 assignstmt2 iostmt type2 type expression expression0 expression2 expression3 expression4 accesvector accesvector2 aritoperators ifstmt ifstmt2 whilestmt condition condition1 condition11 condition2 reloperators operators
+program IDENTIFIER ; endprogram bool char num string [ ] CONST = + - / * % read ( ) write if endif else endelse while endwhile < <= is <> => > and or not
+programDef
+programDef -> program IDENTIFIER ; stmtlist endprogram ;
+stmtlist -> stmt stmtlist2 | ε
+stmtlist2 -> stmtlist | ε
+stmt -> simplestmt | structstmt | declar
+simplestmt -> assignstmt | iostmt
+type -> bool | char | num | string
+type2 -> ε | [ CONST ]
+declar -> type type2 IDENTIFIER ;
+assignstmt -> IDENTIFIER assignstmt1 = assignstmt2 ;
+assignstmt1 -> accesvector | ε
+assignstmt2 -> IDENTIFIER assignstmt1 | expression0 | CONST
+accesvector -> [ accesvector2
+accesvector2 -> CONST ] | IDENTIFIER ]
+operators -> + | - | / | * | %
+expression0 -> IDENTIFIER operators expression3 | accesvector operators expression4
+expression -> operators expression2
+expression2 -> IDENTIFIER | CONST
+expression3 -> IDENTIFIER | CONST
+expression4 -> IDENTIFIER | CONST
+iostmt -> read ( IDENTIFIER ) ; | write ( IDENTIFIER ) ;
+structstmt -> ifstmt | whilestmt
+ifstmt -> if ( condition ) stmtlist ifstmt2 ;
+ifstmt2 -> else stmtlist endelse endif | endif
+whilestmt -> while ( condition ) stmtlist2 endwhile ;
+condition -> condition1 condition2 condition1
+condition1 -> IDENTIFIER condition11 | CONST | accesvector
+condition11 -> accesvector | ε
+condition2 -> aritoperators | reloperators
+aritoperators -> < | <= | is | <> | => | >
+reloperators -> and | or | not
