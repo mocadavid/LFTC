@@ -1,4 +1,0 @@
-1: programDef -> [program, IDENTIFIER, ;, stmtlist, endprogram, ;]
-3: stmtlist -> [ε]
-
-programDef->[program, IDENTIFIER, ;, stmtlist, endprogram, ;]->[program, IDENTIFIER, ;, endprogram, ;]
