@@ -43,7 +43,7 @@
 %token GREATER_OR_EQUAL_THAN
 
 
-%start program
+%start programDef
 
 %%
 
